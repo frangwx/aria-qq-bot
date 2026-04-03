@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**绝区零 QQ 机器人助手**
+**aria QQ bot**
 
 基于 NoneBot2 开发的智能对话机器人，专为绝区零玩家打造
 
@@ -315,3 +315,4 @@ docker logs napcat
 **Made with ❤️ for Zenless Zone Zero**
 
 </div>
+# aria-qq-bot
