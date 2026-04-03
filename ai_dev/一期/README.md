@@ -129,7 +129,7 @@ https://bbs-api-static.miyoushe.com/painter/wapi/getNewsList
 ## 后续规划
 
 ### 第二期功能
-- [ ] 支持更多 LLM 后端 (Claude, Gemini)
+- [ ] 支持更多 LLM 后端
 - [ ] 添加游戏数据查询 (角色、武器、图鉴)
 - [ ] 群聊管理功能
 - [ ] 多模态处理功能
@@ -137,7 +137,7 @@ https://bbs-api-static.miyoushe.com/painter/wapi/getNewsList
 - [ ] 多语言支持
 
 ### 后续技术升级
-    
+    学习Agent开发相关，进行后续优化
 ---
 
 ## 联系方式

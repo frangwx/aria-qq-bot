@@ -4,7 +4,7 @@
 
 **aria QQ bot**
 
-基于 NoneBot2 开发的智能对话机器人，专为绝区零玩家打造
+基于 NoneBot2 开发的智能对话机器人，AI练手小项目
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![NoneBot2](https://img.shields.io/badge/NoneBot2-2.0+-green.svg)](https://nonebot.dev/)

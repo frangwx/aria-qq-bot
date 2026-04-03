@@ -10,7 +10,7 @@
 ### 1. API 接口测试
 - 米游社资讯 API
 - 官方网站 HTML 解析
-- B站热门 API
+
 
 ### 2. 消息格式测试
 - `format_news_for_push()` 资讯格式化
