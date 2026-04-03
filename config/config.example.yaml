@@ -1,0 +1,28 @@
+# Bot 基础配置
+bot:
+  name: "Aria"
+  superusers:
+    - "你的QQ号"
+
+# LLM 配置
+llm:
+  provider: "openai"
+  api_key: "你的API密钥"
+  base_url: "https://api.openai.com/v1"
+  model: "gpt-4o-mini"
+
+# 存储配置
+storage:
+  database: "./data/aria.db"
+  vector_path: "./data/memory/"
+
+# 日志配置
+log:
+  level: "INFO"
+  file: "./logs/bot.log"
+
+# NapCat 连接配置
+adapter:
+  onebot:
+    ws_urls:
+      - "ws://127.0.0.1:3001"
