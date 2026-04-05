@@ -4,6 +4,7 @@ from src.llm import get_llm_provider, get_system_prompt
 from src.memory import memory
 from src.utils import get_logger, get_config
 from src.utils.sensitive import sensitive_filter
+from src.utils.jailbreak import jailbreak_detector
 
 logger = get_logger()
 
@@ -71,6 +72,11 @@ class ChatService:
             logger.warning(f"Sensitive words detected from user {user_id}: {found_words}")
             return "抱歉，你的消息包含敏感内容，无法处理~"
         
+        is_jailbreak, refusal_response = jailbreak_detector.detect(user_input)
+        if is_jailbreak:
+            logger.warning(f"Jailbreak attempt from user {user_id}: {user_input[:50]}")
+            return refusal_response
+        
         await memory.add_message(session_id, "user", user_input)
         
         context = await memory.get_context(session_id)
@@ -122,6 +128,12 @@ class ChatService:
         if has_sensitive:
             logger.warning(f"Sensitive words detected from user {user_id}: {found_words}")
             yield "抱歉，你的消息包含敏感内容，无法处理~"
+            return
+        
+        is_jailbreak, refusal_response = jailbreak_detector.detect(user_input)
+        if is_jailbreak:
+            logger.warning(f"Jailbreak attempt from user {user_id}: {user_input[:50]}")
+            yield refusal_response
             return
         
         await memory.add_message(session_id, "user", user_input)
