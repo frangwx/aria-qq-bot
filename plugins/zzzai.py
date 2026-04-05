@@ -566,6 +566,14 @@ async def handle_chat(event: MessageEvent):
         session_id = memory.create_session_id(user_id)
     
     user_input = event.get_plaintext().strip()
+    
+    images = [seg.data.get("url") or seg.data.get("file") 
+              for seg in event.message if seg.type == "image"]
+    
+    if images:
+        image_desc = f"[用户发送了{len(images)}张图片]"
+        user_input = f"{user_input}\n{image_desc}" if user_input else image_desc
+    
     if not user_input:
         await chat_matcher.finish("你好呀~有什么想和我聊的吗？")
     
